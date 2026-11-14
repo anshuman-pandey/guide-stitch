@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-14T14:33:46.338556+00:00",
+  "checked_at": "2026-11-14T23:06:32.354406+00:00",
   "status": "local candidate, not released",
   "node_tests": 16,
   "real_extension_browser_checks": [
@@ -18,7 +18,7 @@
     "public repository publication",
     "external distribution"
   ],
-  "capture_attempt": "Synthetic shortcut did not invoke capture. A full-tab popup lacked activeTab; worker now returns actionable toolbar guidance. Actual toolbar capture remains unverified.",
-  "github_blocker": "createRepository still returns Resource not accessible by integration after user reconnection",
-  "next_action": "Validate real browser action capture, then publish; factory repo must exist or creation scope must be granted"
+  "capture_attempt": "Managed browser denied chrome://extensions/ via URL security policy and prohibited alternate-surface workarounds. Native browser launch produced no window. Real toolbar/shortcut capture remains unverified.",
+  "next_action": "Owner performs real toolbar acceptance using HANDOFF.md and acceptance/capture-fixture.html. Repository creation and publication require separate owner action/authorization; factory remote is not a dependency.",
+  "publication": "Independent step-cabinet remote unavailable on read-only check; no creation/push/release authorized this pass."
 }

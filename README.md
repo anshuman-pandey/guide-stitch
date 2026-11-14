@@ -27,7 +27,7 @@ Delete a step or guide to remove it from extension storage. Uninstalling removes
 
 ## Validation and current limits
 
-`node --test core.test.js worker.test.js` runs 15 unit and worker tests with no dependencies. These cover capture error handling, serialization, stale edits, deletion, escaping, portable exports and validation. Worker capture tests use mocked Chrome APIs.
+`node --test core.test.js worker.test.js` runs 16 unit and worker tests with no dependencies. These cover capture error handling, serialization, stale edits, deletion, escaping, portable exports and validation. Worker capture tests use mocked Chrome APIs.
 
 The real extension loaded in Chromium and passed creation, editing, screenshot redaction, reload persistence, HTML download/open, ZIP download and deletion using an explicitly synthetic screenshot fixture. ZIP CRCs and extracted PNGs were independently verified. The browser test did **not** prove real toolbar/shortcut capture permission: synthesized shortcut input did not trigger Chromium's command handler. Manual browser-action capture remains an acceptance gate before a public release. This is a local candidate, not a published or store-approved extension.
 
@@ -42,3 +42,7 @@ First demo: author a real, useful onboarding tutorial, redact a synthetic privat
 Comparison references: https://scribe.com/ and https://appsumo.com/products/guidejar/ . This is a narrow manual guide-authoring alternative, not a feature-parity claim. Verify current competitors before publishing prices or feature comparisons.
 
 License: MIT.
+
+## Owner launch handoff
+
+See [HANDOFF.md](HANDOFF.md) for the exact real-toolbar acceptance procedure, synthetic test page, prefilled repository form and publication boundaries. Public source push, releases and deployment require a separate product-specific go-ahead.
