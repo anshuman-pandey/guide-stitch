@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Step Cabinet",
+  "version": "0.1.0",
+  "description": "Capture browser steps on demand, redact screenshots, and export portable guides. Local storage only.",
+  "permissions": ["activeTab", "storage", "unlimitedStorage"],
+  "background": {"service_worker": "worker.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Step Cabinet"},
+  "commands": {"capture-step": {"suggested_key": {"default": "Alt+Shift+S"}, "description": "Capture a step in the current guide"}}
+}

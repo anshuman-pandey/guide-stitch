@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {escapeHTML,imageURL,publicSource,patchGuide,exportHTML,exportMarkdown,zipFiles} from './core.js';
+const png='data:image/png;base64,iVBORw0KGgo=';
+const guide=()=>({title:'Guide',description:'Intro',revision:1,steps:[{id:'a',caption:'One',image:png},{id:'b',caption:'Two',image:png}]});
+test('reject executable image URLs',()=>{assert.throws(()=>imageURL('javascript:alert(1)'));assert.throws(()=>imageURL('data:image/svg+xml;base64,aaaa'));});
+test('source excludes paths and tokens',()=>{assert.equal(publicSource('https://example.com/private/token?key=secret#fragment'),'https://example.com');assert.throws(()=>publicSource('chrome://settings'));});
+test('concurrent changes cannot overwrite newer revision',()=>assert.throws(()=>patchGuide(guide(),{revision:0,title:'Stale'}),/another tab/));
+test('move, delete and preserve original guide',()=>{const g=guide(),m=patchGuide(g,{revision:1,move:{id:'b',delta:-1}});assert.equal(m.steps[0].id,'b');assert.equal(g.steps[0].id,'a');assert.equal(patchGuide(m,{revision:2,remove:'a'}).steps.length,1);});
+test('validate captions and movement boundaries',()=>{assert.throws(()=>patchGuide(guide(),{revision:1,step:{id:'a',caption:'x'.repeat(2001)}}));assert.throws(()=>patchGuide(guide(),{revision:1,move:{id:'a',delta:-1}}));});
+test('HTML export escapes markup and never exports sources',()=>{const g=guide();g.title='<script>alert(1)</script>';g.steps[0].source='https://private.example';const html=exportHTML(g);assert.ok(!html.includes('<script>'));assert.ok(html.includes('&lt;script&gt;'));assert.ok(!html.includes('private.example'));assert.ok(html.includes(png));});
+test('Markdown references portable images and escapes HTML',()=>{const g=guide();g.steps[0].caption='<img src=x onerror=evil()>';const result=exportMarkdown(g);assert.ok(result.includes('step-1.png'));assert.ok(!result.includes('<img'));});
+test('zip headers and directory are present',()=>{const zip=zipFiles([{name:'guide.md',data:'hello'}]);const v=new DataView(zip.buffer);assert.equal(v.getUint32(0,true),0x04034b50);assert.equal(v.getUint32(zip.length-22,true),0x06054b50);assert.equal(v.getUint16(zip.length-14,true),1);});
