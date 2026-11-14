@@ -1,4 +1,26 @@
-# Step Cabinet
+<div align="center">
+
+![Step Cabinet — Make the next step clear.](docs/assets/banner.svg)
+
+### Open-source alternative to Scribe and Guidejar for manual browser guides
+
+Capture. Explain. Redact. Export.
+
+**MIT licensed** · **Own your data** · **No AI service required**
+
+[**Install locally →**](#install-locally) · [Workflow](#the-workflow) · [MIT license](LICENSE) · [Launch handoff](HANDOFF.md)
+
+</div>
+
+> Local candidate. Real toolbar/shortcut capture is still an owner manual acceptance gate.
+
+![Step Cabinet application workflow](artifacts/editor.png)
+
+*Actual extension editor using a synthetic screenshot fixture. Real toolbar capture remains unverified.*
+
+## The workflow
+
+**Capture a visible step → edit the explanation → redact → export HTML or Markdown.**
 
 Capture browser steps on demand, edit the explanation, permanently redact screenshots, and export a guide that works without a hosting service.
 
