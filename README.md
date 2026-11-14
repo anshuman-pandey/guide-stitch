@@ -1,6 +1,6 @@
 <div align="center">
 
-![Step Cabinet — Make the next step clear.](docs/assets/banner.svg)
+![Guide Stitch — Make the next step clear.](docs/assets/banner.svg)
 
 ### Open-source alternative to Scribe and Guidejar for manual browser guides
 
@@ -14,7 +14,7 @@ Capture. Explain. Redact. Export.
 
 > Local candidate. Real toolbar/shortcut capture is still an owner manual acceptance gate.
 
-![Step Cabinet application workflow](artifacts/editor.png)
+![Guide Stitch application workflow](artifacts/editor.png)
 
 *Actual extension editor using a synthetic screenshot fixture. Real toolbar capture remains unverified.*
 
@@ -30,7 +30,7 @@ This is the OpenSteps queue candidate. It targets the basic guide-authoring work
 
 1. Open `chrome://extensions` in Chromium or Chrome.
 2. Enable Developer mode, choose **Load unpacked**, and select this directory (the one containing manifest.json).
-3. Pin Step Cabinet. Open a regular HTTP/HTTPS page, click the extension, and create a guide.
+3. Pin Guide Stitch. Open a regular HTTP/HTTPS page, click the extension, and create a guide.
 4. Click **Capture this step** after each action you want to document. The optional `Alt+Shift+S` shortcut can be configured at `chrome://extensions/shortcuts` if it conflicts with your OS.
 5. Choose **Review & export**. Edit captions, reorder/remove steps, and redact sensitive areas. Export one self-contained HTML file or a ZIP with Markdown and PNG images.
 
