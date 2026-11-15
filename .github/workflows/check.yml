@@ -11,3 +11,11 @@ jobs:
         with:
           node-version: '22'
       - run: node --test core.test.js worker.test.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: node --test i18n.catalog.test.cjs
+      - name: Interface languages (isolated fixtures)
+        run: npm run test:i18n
