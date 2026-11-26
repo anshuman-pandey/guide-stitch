@@ -12,7 +12,7 @@ Capture. Explain. Redact. Export.
 
 </div>
 
-> Local candidate. Real toolbar/shortcut capture is still an owner manual acceptance gate.
+> Public source preview. Real toolbar/shortcut capture remains unverified; follow the [capture acceptance checklist](HANDOFF.md).
 
 ![Guide Stitch application workflow](artifacts/editor.png)
 
@@ -24,7 +24,7 @@ Capture. Explain. Redact. Export.
 
 Capture browser steps on demand, edit the explanation, permanently redact screenshots, and export a guide that works without a hosting service.
 
-This is the OpenSteps queue candidate. It targets the basic guide-authoring workflow of Scribe and Guidejar, with deliberate manual capture rather than automatic click tracking. No AI, account, upload endpoint or third-party runtime code.
+Guide Stitch is the OpenSteps project in the factory queue. It targets the basic guide-authoring workflow of Scribe and Guidejar, with deliberate manual capture rather than automatic click tracking. No AI, account, upload endpoint or third-party runtime code.
 
 ## Install locally
 
@@ -51,7 +51,7 @@ Delete a step or guide to remove it from extension storage. Uninstalling removes
 
 `node --test core.test.js worker.test.js` runs 16 unit and worker tests with no dependencies. These cover capture error handling, serialization, stale edits, deletion, escaping, portable exports and validation. Worker capture tests use mocked Chrome APIs.
 
-The real extension loaded in Chromium and passed creation, editing, screenshot redaction, reload persistence, HTML download/open, ZIP download and deletion using an explicitly synthetic screenshot fixture. ZIP CRCs and extracted PNGs were independently verified. The browser test did **not** prove real toolbar/shortcut capture permission: synthesized shortcut input did not trigger Chromium's command handler. Manual browser-action capture remains an acceptance gate before a public release. This is a local candidate, not a published or store-approved extension.
+The real extension loaded in Chromium and passed creation, editing, screenshot redaction, reload persistence, HTML download/open, ZIP download and deletion using an explicitly synthetic screenshot fixture. ZIP CRCs and extracted PNGs were independently verified. The browser test did **not** prove real toolbar/shortcut capture permission: synthesized shortcut input did not trigger Chromium's command handler. Manual browser-action capture remains an acceptance gate before a public release. The source is public; a tested extension release and store approval are not claimed.
 
 `artifacts/editor.png` is the actual editor screenshot with synthetic test content. `artifacts/validation.json` records the evidence and remaining gates. The repository's CI runs the pure Node tests.
 
