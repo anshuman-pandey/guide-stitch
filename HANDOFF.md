@@ -1,6 +1,6 @@
-# Guide Stitch — owner-controlled launch handoff
+# Guide Stitch — installation and capture acceptance
 
-Status: prepared local candidate, **not release-approved**. Existing independent checkout retained; nothing pushed or released during this pass.
+Status: **public source preview** at [anshuman-pandey/guide-stitch](https://github.com/anshuman-pandey/guide-stitch). Source publication is verified; real toolbar capture and Chrome Web Store distribution are not. The owner authorized continued completion and publication on 26 November 2026.
 
 Open-source alternative to Scribe and Guidejar for manually capturing browser steps, editing instructions, redacting screenshots and exporting portable HTML or Markdown guides. Local extension storage; MIT licensed. No automatic click tracking or feature-parity claim.
 
@@ -16,7 +16,7 @@ The managed browser rejected chrome://extensions/ under its URL security policy.
 
 On your own Chrome:
 
-1. Extract the provided ZIP. Open chrome://extensions, enable Developer mode, click Load unpacked and choose the extracted folder containing manifest.json. Pin Guide Stitch.
+1. Download the source ZIP from this repository’s **Code → Download ZIP**, or clone `https://github.com/anshuman-pandey/guide-stitch.git`. Extract the ZIP if needed. Open chrome://extensions, enable Developer mode, click Load unpacked and choose the extracted folder containing manifest.json. Pin Guide Stitch.
 2. From that folder run `python3 -m http.server 5140 --bind 127.0.0.1`. Open `http://127.0.0.1:5140/acceptance/capture-fixture.html?private=synthetic#test`.
 3. Click the actual extension toolbar icon. Create a guide named “Toolbar acceptance”, then click Capture this step. Confirm the popup says Step 1 captured.
 4. Close the popup, click Complete example action on the page, reopen Guide Stitch from its toolbar icon and capture again. Confirm Step 2 captured.
@@ -26,10 +26,10 @@ On your own Chrome:
 
 Record browser/OS version and results. Do not use private customer data in this check. Existing exports and original source pages are not erased by redaction.
 
-## Repository form — submit only when you choose
+## Current next action
 
-[Prefilled Guide Stitch creation form](https://github.com/new?name=step-cabinet&description=Open-source%20alternative%20to%20Scribe%20and%20Guidejar%20for%20manual%20browser%20step-by-step%20guides.%20Capture%20screenshots%2C%20edit%20instructions%2C%20redact%2C%20and%20export%20HTML%20or%20Markdown.%20Local-first.%20MIT%20licensed.&visibility=public)
+Complete the real toolbar acceptance above in an environment that permits extension installation and record the results. The current managed browser policy blocks that check; do not bypass it or treat synthetic editor tests as capture acceptance.
 
-Owner: anshuman-pandey. Name: step-cabinet. Public. Leave README, license and gitignore initialization off because they are already included. Repository creation is not release approval.
+The independent source repository already exists. No new repository creation or repeated source-push authorization is needed. After capture acceptance passes, review the tested head and remaining release gates before publishing an extension package. Broader naming review and external distribution remain pending; no Chrome Web Store approval is claimed.
 
-Exact next action: complete the toolbar acceptance above and report its result. After it passes, create the empty repository when ready and separately authorize the Guide Stitch source push. CI, release publication and deployment remain subject to your product-specific go-ahead. Broader naming review and any store submission remain pending; no Chrome Web Store approval is claimed.
+See [current audit](docs/AUDIT.md) for dated CI evidence. Earlier validation receipts describe their original test scope and are not proof of toolbar capture.
