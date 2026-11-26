@@ -20,5 +20,28 @@
   ],
   "capture_attempt": "Managed browser denied chrome://extensions/ via URL security policy and prohibited alternate-surface workarounds. Native browser launch produced no window. Real toolbar/shortcut capture remains unverified.",
   "next_action": "Owner performs real toolbar acceptance using HANDOFF.md and acceptance/capture-fixture.html. Repository creation and publication require separate owner action/authorization; factory remote is not a dependency.",
-  "publication": "Independent step-cabinet remote unavailable on read-only check; no creation/push/release authorized this pass."
+  "publication": "Independent step-cabinet remote unavailable on read-only check; no creation/push/release authorized this pass.",
+  "current_audit": {
+    "checked_at": "2026-11-26T13:36:59.571702+00:00",
+    "source_head": "72b371f40ba1af8dc48d5ee24eafb5eb8ff2e6f1",
+    "source_publication": "https://github.com/anshuman-pandey/guide-stitch",
+    "source_public": true,
+    "ci": {
+      "conclusion": "success",
+      "headSha": "72b371f40ba1af8dc48d5ee24eafb5eb8ff2e6f1",
+      "status": "completed",
+      "url": "https://github.com/anshuman-pandey/guide-stitch/actions/runs/43703025193"
+    },
+    "local_core_check": {
+      "exit": 0,
+      "summary": "✔ reject executable image URLs (3.357911ms)\n✔ source excludes paths and tokens (0.409838ms)\n✔ concurrent changes cannot overwrite newer revision (1.939162ms)\n✔ move, delete and preserve original guide (1.119329ms)\n✔ validate captions and movement boundaries (0.543216ms)\n✔ HTML export escapes markup and never exports sources (0.826322ms)\n✔ Markdown references portable images and escapes HTML (0.414075ms)\n✔ zip headers and directory are present (21.479411ms)\n✔ capture persists step and removes URL secrets (9.78919ms)\n✔ simultaneous captures serialize without losing a step (0.519259ms)\n✔ permission failure leaves stored guide unchanged (0.567707ms)\n✔ wrong tab refuses capture (1.498877ms)\n✔ stale editor cannot overwrite captured step (0.873098ms)\n✔ guide delete clears active reference and images (2.45457ms)\n✔ foreign sender rejected (0.256499ms)\n✔ missing activeTab permission gives a useful recovery action (0.560734ms)\nℹ tests 16\nℹ suites 0\nℹ pass 16\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 144.767686\n"
+    },
+    "release_urls": [],
+    "hosted_demo_url": null,
+    "remaining_gates": [
+      "Actual user-invoked toolbar/shortcut screenshot capture",
+      "External distribution"
+    ],
+    "note": "Historical validation below is retained as dated evidence. Source publication does not establish a hosted deployment."
+  }
 }
